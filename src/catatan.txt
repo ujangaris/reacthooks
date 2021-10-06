@@ -1,3 +1,5 @@
 install react-router:
       npm install react-router-dom
+install Bulma(seperti bootstrap namun berfocus pada css)
+      npm install bulma
 
