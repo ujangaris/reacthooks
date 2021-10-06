@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductList from "./components/ProductList";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import AddProduct from "./components/AddProduct";
 
 function App() {
   return (
@@ -11,11 +10,8 @@ function App() {
           <Route exact path="/">
             <ProductList />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/contact">
-            <Contact />
+          <Route path="/add">
+            <AddProduct />
           </Route>
         </Switch>
       </Router>
