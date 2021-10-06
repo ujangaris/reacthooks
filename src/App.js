@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductList from "./components/ProductList";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
   const [products, setProducts] = useState([
@@ -23,10 +26,19 @@ function App() {
   }, [name]);
   return (
     <div className="App">
-      <Header />
-      <ProductList products={products} deleteProduct={deleteProduct} />
-      <button onClick={() => setName("joko")}>Change Name</button>
-      <p>{name}</p>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <ProductList products={products} deleteProduct={deleteProduct} />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
