@@ -2,18 +2,24 @@ import { useState } from "react";
 import Header from "./comopents/Header";
 
 function App() {
-  const [title, setTittle] = useState("welcome to my App");
-  const [age, setAge] = useState(20);
-  const changeTitle = () => {
-    setTittle("Title changed");
-    setAge(40);
-  };
+  const [products, setProdducts] = useState([
+    { id: 1, title: "Product 1", price: 899 },
+    { id: 2, title: "Product 2", price: 769 },
+    { id: 3, title: "Product 3", price: 989 },
+    { id: 4, title: "Product 4", price: 871 },
+    { id: 5, title: "Product 5", price: 459 },
+  ]);
+
   return (
     <div className="App">
       <Header />
-      <h1>{title}</h1>
-      <h1>age : {age}</h1>
-      <button onClick={changeTitle}>Change title</button>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.title} - {product.price}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
