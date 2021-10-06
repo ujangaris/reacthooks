@@ -4,6 +4,9 @@ function App() {
   const title = "welcome to my App";
   const age = 20;
   const link = "https://mfikri.com";
+  const clickme = (name) => {
+    console.log("Hello " + name);
+  };
   return (
     <div className="App">
       <Header />
@@ -12,6 +15,7 @@ function App() {
       <h1>
         <a href={link}>Go to google</a>
       </h1>
+      <button onClick={() => clickme("Ujang")}>Click Me</button>
     </div>
   );
 }
