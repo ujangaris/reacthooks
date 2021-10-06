@@ -1,14 +1,23 @@
 //rafce
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
+  const history = useHistory();
 
-  const saveProduct = (e) => {
+  const saveProduct = async (e) => {
     e.preventDefault();
     const product = { title, price };
-    console.log(product);
+    await fetch("http://localhost:8080/products", {
+      method: "POST",
+      body: JSON.stringify(product),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    history.push("/");
   };
 
   return (
