@@ -3,3 +3,5 @@ install react-router:
 install Bulma(seperti bootstrap namun berfocus pada css)
       npm install bulma
 
+menjalankan file db.json:
+      npx json-server --watch db.json --port=8080

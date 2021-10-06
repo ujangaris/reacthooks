@@ -8,7 +8,7 @@ const ProductList = ({ products, deleteProduct }) => {
           <li key={product.id}>
             {product.title} - {product.price}
             <button
-              className="fas fa-times button is-danger is-small"
+              className="button is-danger is-small"
               onClick={() => deleteProduct(product.id)}
             >
               Delete
