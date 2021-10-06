@@ -1,8 +1,9 @@
 import { useState } from "react";
-import Header from "./comopents/Header";
+import Header from "./components/Header";
+import ProductList from "./components/ProductList";
 
 function App() {
-  const [products, setProdducts] = useState([
+  const [products, setProducts] = useState([
     { id: 1, title: "Product 1", price: 899 },
     { id: 2, title: "Product 2", price: 769 },
     { id: 3, title: "Product 3", price: 989 },
@@ -10,16 +11,15 @@ function App() {
     { id: 5, title: "Product 5", price: 459 },
   ]);
 
+  const deleteProduct = (productId) => {
+    const newProducts = products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
+  };
+
   return (
     <div className="App">
       <Header />
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.title} - {product.price}
-          </li>
-        ))}
-      </ul>
+      <ProductList products={products} deleteProduct={deleteProduct} />
     </div>
   );
 }
