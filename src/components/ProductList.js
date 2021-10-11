@@ -1,5 +1,6 @@
 //rafce
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -30,7 +31,12 @@ const ProductList = () => {
               <td>{product.title}</td>
               <td>{product.price}</td>
               <td>
-                <button className="button is-warning is-small">Edit</button>
+                <Link
+                  to={`/edit/${product.id}`}
+                  className="button is-warning is-small"
+                >
+                  Edit
+                </Link>
                 <button className="button is-danger is-small">Delete</button>
               </td>
             </tr>
