@@ -29,6 +29,11 @@
       "title": "coba update",
       "price": "2222",
       "id": 6
+    },
+    {
+      "title": "product baru ",
+      "price": "123",
+      "id": 7
     }
   ]
 }

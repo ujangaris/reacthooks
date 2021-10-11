@@ -26,6 +26,9 @@ const ProductList = () => {
 
   return (
     <div>
+      <Link to="/add" className="button is-primary">
+        Add New
+      </Link>
       <table className="table is-striped">
         <thead>
           <tr>
