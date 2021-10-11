@@ -5,3 +5,9 @@ install Bulma(seperti bootstrap namun berfocus pada css)
 
 menjalankan file db.json:
       npx json-server --watch db.json --port=8080
+
+untuk mendeploy aplikasi ke hosting 
+      npm run build
+
+      npm install -g serve
+      serve -s build
