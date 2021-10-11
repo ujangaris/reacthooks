@@ -13,6 +13,17 @@ const ProductList = () => {
     const data = await response.json();
     setProducts(data);
   };
+
+  const deleteProduct = async (id) => {
+    await fetch(`http://localhost:8080/products/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    fetchData();
+  };
+
   return (
     <div>
       <table className="table is-striped">
@@ -37,7 +48,12 @@ const ProductList = () => {
                 >
                   Edit
                 </Link>
-                <button className="button is-danger is-small">Delete</button>
+                <button
+                  onClick={() => deleteProduct(product.id)}
+                  className="button is-danger is-small"
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
