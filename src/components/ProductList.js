@@ -29,7 +29,7 @@ const ProductList = () => {
       <Link to="/add" className="button is-primary">
         Add New
       </Link>
-      <table className="table is-striped">
+      <table className="table is-striped is-fullwidth">
         <thead>
           <tr>
             <th>No.</th>
